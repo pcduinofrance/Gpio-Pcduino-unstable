@@ -661,7 +661,9 @@ void OnQuitter(GtkWidget* widget, gpointer data)
             break;
     }
 }
- 
+
+// ------------------------------------------------------------------
+
 void OnAbout(GtkWidget* widget, gpointer data)
 {
     GtkWidget *pAbout;
@@ -677,6 +679,8 @@ void OnAbout(GtkWidget* widget, gpointer data)
  
     gtk_widget_destroy(pAbout);
 }
+
+// ------------------------------------------------------------------
 
 void Aide(GtkWidget* widget, gpointer data)
 {
@@ -698,3 +702,76 @@ void Aide(GtkWidget* widget, gpointer data)
  
     gtk_widget_destroy(pAbout);
 }
+
+// ------------------------------------------------------------------
+
+void OnOff(GtkWidget* widget, gpointer data)
+{
+    GtkWidget *pAbout;
+ 
+    pAbout = gtk_message_dialog_new(GTK_WINDOW(data),
+        GTK_DIALOG_MODAL,
+        GTK_MESSAGE_INFO,
+        GTK_BUTTONS_OK,
+        "Telecommande Gpio du Pcduino\n"
+        "OnOff");
+ 
+    gtk_dialog_run(GTK_DIALOG(pAbout));
+ 
+    gtk_widget_destroy(pAbout);
+}
+
+// ------------------------------------------------------------------
+
+void Impulse(GtkWidget* widget, gpointer data)
+{
+    GtkWidget *pAbout;
+ 
+    pAbout = gtk_message_dialog_new(GTK_WINDOW(data),
+        GTK_DIALOG_MODAL,
+        GTK_MESSAGE_INFO,
+        GTK_BUTTONS_OK,
+        "Telecommande Gpio du Pcduino\n"
+        "Impulse");
+ 
+    gtk_dialog_run(GTK_DIALOG(pAbout));
+ 
+    gtk_widget_destroy(pAbout);
+}
+
+// ------------------------------------------------------------------
+
+void ChangeName(GtkWidget* widget, gpointer data)
+{
+    GtkWidget *pAbout;
+ 
+    pAbout = gtk_message_dialog_new(GTK_WINDOW(data),
+        GTK_DIALOG_MODAL,
+        GTK_MESSAGE_INFO,
+        GTK_BUTTONS_OK,
+        "Telecommande Gpio du Pcduino\n"
+        "ChangeName");
+ 
+    gtk_dialog_run(GTK_DIALOG(pAbout));
+ 
+    gtk_widget_destroy(pAbout);
+}
+
+// ------------------------------------------------------------------
+
+void InitGpio(GtkWidget* widget, gpointer data)
+{
+    GtkWidget *pAbout;
+ 
+    pAbout = gtk_message_dialog_new(GTK_WINDOW(data),
+        GTK_DIALOG_MODAL,
+        GTK_MESSAGE_INFO,
+        GTK_BUTTONS_OK,
+        "Telecommande Gpio du Pcduino\n"
+        "InitGpio");
+ 
+    gtk_dialog_run(GTK_DIALOG(pAbout));
+ 
+    gtk_widget_destroy(pAbout);
+}
+

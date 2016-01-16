@@ -1,9 +1,8 @@
 #include <stdlib.h>
-#include "callback.h"
 #include <gtk/gtk.h>
- 
+#include "callback.h"
 
- test
+
 int main(int argc, char **argv)
 {
     GtkWidget *window;
@@ -41,15 +40,19 @@ int main(int argc, char **argv)
     pMenu = gtk_menu_new();
     /* ETAPE 3 */
     pMenuItem = gtk_menu_item_new_with_label("Mode On/Off");
+	g_signal_connect(G_OBJECT(pMenuItem), "activate", G_CALLBACK(OnOff),(GtkWidget*) window);
     gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), pMenuItem);
  
     pMenuItem = gtk_menu_item_new_with_label("Mode Impulsion");
+	g_signal_connect(G_OBJECT(pMenuItem), "activate", G_CALLBACK(Impulse),(GtkWidget*) window);
     gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), pMenuItem);
  
     pMenuItem = gtk_menu_item_new_with_label("Modifier le nom des Gpio");
+	g_signal_connect(G_OBJECT(pMenuItem), "activate", G_CALLBACK(ChangeName),(GtkWidget*) window);
     gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), pMenuItem);
  
     pMenuItem = gtk_menu_item_new_with_label("Initialisation des Gpio en output");
+	g_signal_connect(G_OBJECT(pMenuItem), "activate", G_CALLBACK(InitGpio),(GtkWidget*) window);
     gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), pMenuItem);
  
     pMenuItem = gtk_menu_item_new_with_label("Quitter");
